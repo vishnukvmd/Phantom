@@ -1,0 +1,1 @@
+cmd_net/compat-wireless/drivers/net/wireless/built-in.o :=  rm -f net/compat-wireless/drivers/net/wireless/built-in.o; /home/dj/Toolchains/arm-eabi-4.4.3/bin/arm-eabi-ar rcs net/compat-wireless/drivers/net/wireless/built-in.o

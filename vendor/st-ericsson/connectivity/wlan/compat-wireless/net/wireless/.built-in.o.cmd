@@ -1,0 +1,1 @@
+cmd_net/compat-wireless/net/wireless/built-in.o :=  /home/dj/Toolchains/arm-eabi-4.4.3/bin/arm-eabi-ld -EL    -r -o net/compat-wireless/net/wireless/built-in.o net/compat-wireless/net/wireless/cfg80211.o 

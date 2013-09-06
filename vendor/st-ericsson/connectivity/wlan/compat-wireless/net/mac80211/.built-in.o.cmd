@@ -1,0 +1,1 @@
+cmd_net/compat-wireless/net/mac80211/built-in.o :=  /home/dj/Toolchains/arm-eabi-4.4.3/bin/arm-eabi-ld -EL    -r -o net/compat-wireless/net/mac80211/built-in.o net/compat-wireless/net/mac80211/mac80211.o 

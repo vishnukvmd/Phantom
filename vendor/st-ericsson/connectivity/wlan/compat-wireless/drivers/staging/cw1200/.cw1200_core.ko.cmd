@@ -1,0 +1,1 @@
+cmd_net/compat-wireless/drivers/staging/cw1200/cw1200_core.ko := /home/dj/Toolchains/arm-eabi-4.4.3/bin/arm-eabi-ld -EL -r  -T /home/dj/JB/kernel/scripts/module-common.lds --build-id  -o net/compat-wireless/drivers/staging/cw1200/cw1200_core.ko net/compat-wireless/drivers/staging/cw1200/cw1200_core.o net/compat-wireless/drivers/staging/cw1200/cw1200_core.mod.o

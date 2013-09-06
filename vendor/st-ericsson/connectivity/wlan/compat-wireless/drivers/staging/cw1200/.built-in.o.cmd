@@ -1,0 +1,1 @@
+cmd_net/compat-wireless/drivers/staging/cw1200/built-in.o :=  rm -f net/compat-wireless/drivers/staging/cw1200/built-in.o; /home/dj/Toolchains/arm-eabi-4.4.3/bin/arm-eabi-ar rcs net/compat-wireless/drivers/staging/cw1200/built-in.o
