@@ -1,0 +1,15 @@
+ui_print("|  Phantom  Kernel  |");
+
+ui_print("Wiping Dalvik Cache...");
+run_program("/sbin/busybox", "mount", "/data");
+run_program("/sbin/busybox", "rm", "-rf", "/data/dalvik-cache");
+ui_print("Dalvik Cache Wiped...");
+
+ui_print("Flashing The Kernel...");
+assert(package_extract_file("kernel.elf", "/tmp/kernel.elf"),
+       write_raw_image("/tmp/kernel.elf", "/dev/block/mmcblk0p9"),
+       delete("/tmp/kernel.elf"));
+ui_print("Kernel Flashed Successfully...");
+ui_print("Reboot Now :)");
+ui_print("                 -Pwng3");
+
