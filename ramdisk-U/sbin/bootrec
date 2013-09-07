@@ -1,0 +1,209 @@
+#!/sbin/sh
+
+mkdir /datadata 0755 system system
+
+cat /sys/devices/platform/ab8500-i2c.0/ab8500-usb.0/boot_time_device > /sys/devices/platform/ab8500-i2c.0/ab8500-usb.0/boot_time_device
+
+echo 0 >/sys/class/android_usb/android0/enable
+echo 0FCE >/sys/class/android_usb/android0/idVendor
+echo 617E >/sys/class/android_usb/android0/idProduct
+echo "mass_storage,adb" >/sys/class/android_usb/android0/functions
+echo 1 >/sys/class/android_usb/android0/enable
+
+if [ -e /cache/recovery/boot ]
+then
+	rm /cache/recovery/boot
+	touch /cache/recovery/enterrecovery
+else
+
+# wait for user to press key
+cat /dev/input/event2 > /dev/keycheck&
+
+# trigger button-backlight
+echo '10' > /sys/class/leds/l-key-red/brightness
+echo '0' > /sys/class/leds/l-key-green/brightness
+echo '0' > /sys/class/leds/l-key-blue/brightness
+echo '0' > /sys/class/leds/m-key-red/brightness
+echo '0' > /sys/class/leds/m-key-green/brightness
+echo '0' > /sys/class/leds/m-key-blue/brightness
+echo '0' > /sys/class/leds/r-key-red/brightness
+echo '0' > /sys/class/leds/r-key-green/brightness
+echo '0' > /sys/class/leds/r-key-blue/brightness
+sleep 0.2
+echo '80' > /sys/class/leds/l-key-red/brightness
+echo '0' > /sys/class/leds/l-key-green/brightness
+echo '0' > /sys/class/leds/l-key-blue/brightness
+echo '0' > /sys/class/leds/m-key-red/brightness
+echo '0' > /sys/class/leds/m-key-green/brightness
+echo '0' > /sys/class/leds/m-key-blue/brightness
+echo '0' > /sys/class/leds/r-key-red/brightness
+echo '0' > /sys/class/leds/r-key-green/brightness
+echo '0' > /sys/class/leds/r-key-blue/brightness
+sleep 0.2
+echo '160' > /sys/class/leds/l-key-red/brightness
+echo '0' > /sys/class/leds/l-key-green/brightness
+echo '0' > /sys/class/leds/l-key-blue/brightness
+echo '0' > /sys/class/leds/m-key-red/brightness
+echo '0' > /sys/class/leds/m-key-green/brightness
+echo '0' > /sys/class/leds/m-key-blue/brightness
+echo '0' > /sys/class/leds/r-key-red/brightness
+echo '0' > /sys/class/leds/r-key-green/brightness
+echo '0' > /sys/class/leds/r-key-blue/brightness
+sleep 0.2
+echo '255' > /sys/class/leds/l-key-red/brightness
+echo '0' > /sys/class/leds/l-key-green/brightness
+echo '0' > /sys/class/leds/l-key-blue/brightness
+echo '0' > /sys/class/leds/m-key-red/brightness
+echo '0' > /sys/class/leds/m-key-green/brightness
+echo '0' > /sys/class/leds/m-key-blue/brightness
+echo '0' > /sys/class/leds/r-key-red/brightness
+echo '0' > /sys/class/leds/r-key-green/brightness
+echo '0' > /sys/class/leds/r-key-blue/brightness
+sleep 0.2
+
+echo '255' > /sys/class/leds/l-key-red/brightness
+echo '0' > /sys/class/leds/l-key-green/brightness
+echo '0' > /sys/class/leds/l-key-blue/brightness
+echo '20' > /sys/class/leds/m-key-red/brightness
+echo '10' > /sys/class/leds/m-key-green/brightness
+echo '0' > /sys/class/leds/m-key-blue/brightness
+echo '0' > /sys/class/leds/r-key-red/brightness
+echo '0' > /sys/class/leds/r-key-green/brightness
+echo '0' > /sys/class/leds/r-key-blue/brightness
+sleep 0.2
+echo '255' > /sys/class/leds/l-key-red/brightness
+echo '0' > /sys/class/leds/l-key-green/brightness
+echo '0' > /sys/class/leds/l-key-blue/brightness
+echo '60' > /sys/class/leds/m-key-red/brightness
+echo '30' > /sys/class/leds/m-key-green/brightness
+echo '0' > /sys/class/leds/m-key-blue/brightness
+echo '0' > /sys/class/leds/r-key-red/brightness
+echo '0' > /sys/class/leds/r-key-green/brightness
+echo '0' > /sys/class/leds/r-key-blue/brightness
+sleep 0.2
+echo '255' > /sys/class/leds/l-key-red/brightness
+echo '0' > /sys/class/leds/l-key-green/brightness
+echo '0' > /sys/class/leds/l-key-blue/brightness
+echo '120' > /sys/class/leds/m-key-red/brightness
+echo '60' > /sys/class/leds/m-key-green/brightness
+echo '0' > /sys/class/leds/m-key-blue/brightness
+echo '0' > /sys/class/leds/r-key-red/brightness
+echo '0' > /sys/class/leds/r-key-green/brightness
+echo '0' > /sys/class/leds/r-key-blue/brightness
+sleep 0.2
+echo '255' > /sys/class/leds/l-key-red/brightness
+echo '0' > /sys/class/leds/l-key-green/brightness
+echo '0' > /sys/class/leds/l-key-blue/brightness
+echo '200' > /sys/class/leds/m-key-red/brightness
+echo '100' > /sys/class/leds/m-key-green/brightness
+echo '0' > /sys/class/leds/m-key-blue/brightness
+echo '0' > /sys/class/leds/r-key-red/brightness
+echo '0' > /sys/class/leds/r-key-green/brightness
+echo '0' > /sys/class/leds/r-key-blue/brightness
+sleep 0.2
+
+echo '255' > /sys/class/leds/l-key-red/brightness
+echo '0' > /sys/class/leds/l-key-green/brightness
+echo '0' > /sys/class/leds/l-key-blue/brightness
+echo '200' > /sys/class/leds/m-key-red/brightness
+echo '100' > /sys/class/leds/m-key-green/brightness
+echo '0' > /sys/class/leds/m-key-blue/brightness
+echo '0' > /sys/class/leds/r-key-red/brightness
+echo '10' > /sys/class/leds/r-key-green/brightness
+echo '0' > /sys/class/leds/r-key-blue/brightness
+sleep 0.2
+echo '255' > /sys/class/leds/l-key-red/brightness
+echo '0' > /sys/class/leds/l-key-green/brightness
+echo '0' > /sys/class/leds/l-key-blue/brightness
+echo '200' > /sys/class/leds/m-key-red/brightness
+echo '100' > /sys/class/leds/m-key-green/brightness
+echo '0' > /sys/class/leds/m-key-blue/brightness
+echo '0' > /sys/class/leds/r-key-red/brightness
+echo '80' > /sys/class/leds/r-key-green/brightness
+echo '0' > /sys/class/leds/r-key-blue/brightness
+sleep 0.2
+echo '255' > /sys/class/leds/l-key-red/brightness
+echo '0' > /sys/class/leds/l-key-green/brightness
+echo '0' > /sys/class/leds/l-key-blue/brightness
+echo '200' > /sys/class/leds/m-key-red/brightness
+echo '100' > /sys/class/leds/m-key-green/brightness
+echo '0' > /sys/class/leds/m-key-blue/brightness
+echo '0' > /sys/class/leds/r-key-red/brightness
+echo '160' > /sys/class/leds/r-key-green/brightness
+echo '0' > /sys/class/leds/r-key-blue/brightness
+sleep 0.2
+echo '255' > /sys/class/leds/l-key-red/brightness
+echo '0' > /sys/class/leds/l-key-green/brightness
+echo '0' > /sys/class/leds/l-key-blue/brightness
+echo '200' > /sys/class/leds/m-key-red/brightness
+echo '100' > /sys/class/leds/m-key-green/brightness
+echo '0' > /sys/class/leds/m-key-blue/brightness
+echo '0' > /sys/class/leds/r-key-red/brightness
+echo '255' > /sys/class/leds/r-key-green/brightness
+echo '0' > /sys/class/leds/r-key-blue/brightness
+sleep 0.8
+
+# trigger vibration
+echo '200' > /sys/class/timed_output/vibrator/enable
+
+# disable LED bar
+echo '0' > /sys/class/leds/l-key-red/brightness
+echo '0' > /sys/class/leds/l-key-green/brightness
+echo '0' > /sys/class/leds/l-key-blue/brightness
+echo '0' > /sys/class/leds/m-key-red/brightness
+echo '0' > /sys/class/leds/m-key-green/brightness
+echo '0' > /sys/class/leds/m-key-blue/brightness
+echo '0' > /sys/class/leds/r-key-red/brightness
+echo '0' > /sys/class/leds/r-key-green/brightness
+echo '0' > /sys/class/leds/r-key-blue/brightness
+
+kill -9 $!
+
+fi
+
+if [ -s /dev/keycheck -o -e /cache/recovery/enterrecovery ]
+then
+
+rm /cache/recovery/enterrecovery
+
+start adbd
+stop cspsa
+stop tad
+stop ta_rmt_service
+stop rmt_storage
+killall -9 cspsa-server
+killall -9 logwrapper
+killall -9 chargemon
+killall -9 tad
+
+mount -o remount,rw rootfs /
+umount -l /system
+umount -l /data
+umount -l /cache
+umount -l /sdcard
+umount -l /mnt/sdcard
+umount -l /mnt/external-sd
+rm -r /sdcard
+rm -r /mnt/sdcard
+rm -r /external-sd
+rm -r /mnt/external-sd
+mkdir /sdcard
+mkdir /external_sd
+mkdir /tmp
+rm /etc
+mkdir /etc
+cp /recovery.fstab /etc/recovery.fstab
+mount /dev/block/mmcblk0p14 /sdcard
+
+echo 0 >/sys/class/android_usb/android0/enable
+echo 0FCE >/sys/class/android_usb/android0/idVendor
+echo 617E >/sys/class/android_usb/android0/idProduct
+echo "mass_storage,adb" >/sys/class/android_usb/android0/functions
+echo 1 >/sys/class/android_usb/android0/enable
+
+export LD_LIBRARY_PATH=/sbin/lib
+
+/sbin/recovery &
+/sbin/ps >/sdcard/ps.log
+ 
+fi
